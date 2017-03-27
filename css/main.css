@@ -1,0 +1,453 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: none;
+    text-decoration: none;
+    list-style: none;
+    outline: none;
+}
+
+.main {
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.worp {
+    width: 1008px;
+    margin: 0 auto;
+}
+
+/*head*/
+.header{ height:79px; width:100%; margin:16px auto 0; background: #b1b1b0; position:relative;}
+
+.right-bg {
+    float: right;
+    margin-top: 8px;
+    height: 71px;
+    width: 50%;
+    *width: 50%;
+    _width: 100%;
+    _margin-left: 50%;
+}
+
+.logo {
+    float: left;
+    height: 79px;
+    width: 312px;
+}
+
+.right {
+    float: right;
+    height: 71px;
+    width: 270px;
+    margin-top: 8px;
+}
+
+.hot {
+    float: right;
+    height: 24px;
+    width: 250px;
+    line-height: 24px;
+    font-size: 18px;
+    color: #de422c;
+    position: relative;
+    margin-top: 6px;
+}
+
+.hot span {
+    float: right;
+    position: absolute;
+    top: 0;
+}
+
+#txt {
+    float: left;
+    height: 27px;
+    width: 214px;
+    font-size: 12px;
+    line-height: 27px \9;
+    color: #b1b1b0;
+    border: 1px solid #b1b1b0;
+    border-right: none;
+    margin-top: 6px;
+}
+
+.button {
+    float: right;
+    height: 29px;
+    width: 55px;
+    background: url(../images/search.gif) no-repeat;
+    margin-top: 6px;
+    cursor: pointer;
+}
+
+/*nav*/
+.con {
+    width: 100%;
+    height: 104px;
+    margin: 0 auto;
+}
+
+.nav {
+    display: inline;
+    float: left;
+    height: 75px;
+    margin-top: 16px;
+    margin-left: 25px;
+}
+
+.nav a {
+    display: inline;
+    float: left;
+    height: 70px;
+    line-height: 55px;
+    text-align: center;
+    padding: 0 20px;
+    font-size: 14px;
+    color: #252525;
+    letter-spacing: 1px;
+}
+
+.a1 {
+    background: #edebeb;
+    border-bottom: 5px solid #de422c;
+}
+
+.nav a:hover {
+    background: #edebeb;
+    border-bottom: 5px solid #de422c;
+}
+
+/*products*/
+.products {
+    padding: 3em 0;
+}
+
+.products h1 {
+    font-size: 3em;
+    margin: 0 0 0.5em;
+    color: #000;
+    font-family: "Apple Chancery";
+    text-align: center;
+}
+
+.content-top1 {
+    padding: 0em 0;
+}
+
+.col-md3 {
+    padding: 0 3px;
+    margin: 0 0 1em;
+    float: left;
+    width: 33.33%;
+}
+
+.price h5 {
+    font-size: 1em;
+    margin-top: 6px;
+    float: left;
+    color: #000;
+}
+
+.col-md1 img {
+    margin: 0 auto;
+}
+
+.col-md1 h3 {
+    color: #000;
+    text-decoration: none;
+    font-size: 1.2em;
+    line-height: 0.5em;
+    font-family: "Arial Rounded MT Bold";
+    text-align: center;
+
+}
+
+.col-md1 a {
+    color: #000;
+}
+
+.col-md1 {
+    border: 1px solid #CACACA;
+    padding: 0.5em;
+    border-bottom: 5px solid #de422c;
+}
+
+.price h5 {
+    font-size: 1em;
+    margin-top: 6px;
+    float: left;
+    color: #000;
+}
+
+.price a {
+    font-size: 0.8em;
+    padding: 0.3em 0.5em;
+    color: #ffffff;
+    display: block;
+    float: right;
+    background-color: #de422c;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+.product-bottom {
+    padding: 0;
+}
+
+h3.cate {
+    color: #de422c;
+    font-size: 1.5em;
+    font-family: "Apple Chancery";
+}
+
+.menu-drop {
+    width: auto;
+    height: auto;
+    padding: 0;
+    list-style: none;
+    margin: 0.5em 0;
+}
+
+.menu-drop > li > a {
+    width: 100%;
+    margin: 0.3em 0;
+    display: inline-block;
+    position: relative;
+    color: #b1b1b0;
+    font-size: 0.9em;
+    text-decoration: none;
+}
+
+.product-go {
+    padding: 1em 0;
+}
+
+.fashion-grid {
+    width: 15%;
+    float: left;
+}
+
+.fashion-grid1 {
+    width: 85%;
+    float: right;
+}
+
+h6.best2 {
+    font-size: 0.9em;
+    line-height: 1.5em;
+}
+
+h6.best2 a {
+    color: #b1b1b0;
+    text-decoration: none;
+}
+
+span.price-in1 {
+    font-size: 1.3em;
+    padding: 0.3em 0 0;
+    display: block;
+    color: #de422c;
+}
+
+.page {
+    text-align: center;
+}
+
+.pages > li > a {
+    color: #b1b1b0;
+}
+
+/*Item*/
+.item {
+    padding: 2em 0;
+}
+
+.grid {
+    float: left;
+}
+
+.item-top-in {
+    width: 57%;
+    float: left;
+    margin: 0 0 2em;
+}
+
+.item_display img {
+    width: 100%;
+    float: left;
+}
+
+.item-para h1 {
+    font-size: 1.5em;
+    color: #de422c;
+    line-height: 1.5em;
+    font-family: "Arial Rounded MT Bold";
+}
+
+.item-para p {
+    font-size: 0.9em;
+    color: #b1b1b0;
+    line-height: 1.8em;
+}
+
+.star-on {
+    padding: 1em 0;
+}
+
+.inventory {
+    float: left;
+    padding: 0 1em;
+}
+
+.star-on p {
+    text-decoration: none;
+    font-size: 1em;
+    color: #b1b1b0;
+}
+
+label.add-to {
+    display: block;
+    font-size: 2em;
+    color: #000;
+}
+
+.available {
+    padding: 2em 0 1em;
+}
+
+.available h6 {
+    color: #de422c;
+    font-size: 1.4em;
+    padding: 0 0 1em;
+}
+
+a.cart {
+    padding: 0.3em 0.7em;
+    color: #ffffff;
+    background: #de422c;
+    margin: 1.5em 0 0;
+    font-size: 1em;
+    display: inline-block;
+    line-height: 1.6em;
+    text-align: center;
+    text-decoration: none;
+}
+
+.item_add {
+    border: none;
+}
+
+/*Checkout*/
+.check-out {
+    padding: 2em 0em;
+}
+
+.check-out h1 {
+    font-size: 2em;
+    margin: 0 0 0.4em;
+    color: #000;
+    font-family: "Apple Chancery";
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    margin: 0 0em 2em;
+    background-color: transparent;
+    border-spacing: 0;
+    border-collapse: collapse;
+    display: table;
+    border-color: #b1b1b0;
+}
+
+th {
+    font-size: 1em;
+    padding: 10px 4px;
+    color: #de422c;
+    font-family: "Apple Chancery";
+    font-weight: 400;
+    text-align: left;
+}
+
+.ring-in {
+    width: 45%;
+}
+
+td {
+    font-size: 1em;
+    padding: 10px 4px;
+    color: #b1b1b0;
+}
+
+a.at-in {
+    float: left;
+    width: 20%;
+}
+
+.sed {
+    float: right;
+    width: 74%;
+}
+
+.sed h5 {
+    color: #de422c;
+    font-size: 1.1em;
+    font-family: "Apple Chancery";
+}
+
+.sed p {
+    padding: 0.5em 0 0;
+    color: #b1b1b0;
+    font-size: 0.8em;
+    line-height: 1.8em;
+}
+
+.check {
+    width: 6%;
+}
+
+.check input {
+    width: 76%;
+    padding: 0.3em;
+    margin: 1em 0;
+    background: #ffffff;
+    outline: none;
+    text-align: center;
+    border: 1px solid #000000;
+}
+
+a.to-buy {
+    margin: 0;
+    font-size: 0.8em;
+    padding: 0.3em 0.7em;
+    color: #ffffff;
+    background: #de422c;
+    display: inline-block;
+    line-height: 1.6em;
+    text-align: center;
+    text-decoration: none;
+}
+
+/*foot*/
+.foot {
+    width: 100%;
+    height: 88px;
+    background: #eaeaea;
+    margin: 0 auto;
+}
+
+.copy {
+    width: 1008px;
+    text-align: center;
+    padding-top: 32px;
+    margin: 0 auto;
+}
+
+.copy p {
+    text-align: center;
+    line-height: 20px;
+    color: #131313;
+    font-size: 12px;
+}
