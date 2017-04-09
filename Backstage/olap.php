@@ -1,4 +1,4 @@
-<?php
+<?
 session_start();
                    // echo $_SESSION['mStoreid'];
                    // echo $_SESSION['job'];
@@ -8,11 +8,45 @@ session_start();
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Store</title>
+    <title>Home</title>
     <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
     <link type="text/css" rel="stylesheet" href="css/main.css"/>
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    
+    <script type="text/javascript">
+        window.onload = function () {
+            var chart = new CanvasJS.Chart("chartContainer",
+            {
+                theme: "theme2",
+                title:{
+                    text: "Gaming Consoles Sold in 2012"
+                },
+                data: [
+                {
+                    type: "pie",
+                    showInLegend: true,
+                    toolTipContent: "{y} - #percent %",
+                    yValueFormatString: "#0.#,,. Million",
+                    legendText: "{indexLabel}",
+                    dataPoints: [
+                        {  y: 4181563, indexLabel: "PlayStation 3" },
+                        {  y: 2175498, indexLabel: "Wii" },
+                        {  y: 3125844, indexLabel: "Xbox 360" },
+                        {  y: 1176121, indexLabel: "Nintendo DS"},
+                        {  y: 1727161, indexLabel: "PSP" },
+                        {  y: 4303364, indexLabel: "Nintendo 3DS"},
+                        {  y: 1717786, indexLabel: "PS Vita"}
+                    ]
+                }
+                ]
+            });
+            chart.render();
+        }
+    </script>
+    <script type="text/javascript" src="js/canvasjs.min.js"></script>
+
 </head>
 <body>
 <div class="container">
@@ -30,7 +64,7 @@ session_start();
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                 </button>
-                                <a class="navbar-brand" href="home.php">Home</a>
+                                <a class="navbar-brand active" href="home.php">Home</a>
                             </div>
 
                             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -39,8 +73,8 @@ session_start();
                                     <li><a href="product.php">Product</a></li>
                                     <li><a href="order.php">Order</a></li>
                                     <li><a href="faculty.php">Faculty</a></li>
-                                    <li class="active"><a href="store.php">Store</a></li>
-                                    <li><a href="olap.php">OLAP</a></li>
+                                    <li><a href="store.php">Store</a></li>
+                                    <li class="active"><a href="olap.php">OLAP</a></li>
                                 </ul>
                                 <ul class="nav navbar-nav navbar-right">
                                     <li><a href="logout.php">Log Out</a></li>
@@ -58,37 +92,22 @@ session_start();
                 <div class="col-md-1 column">
                 </div>
                 <div class="col-md-10 column">
-                    <h3>
-                        Store List
-                    </h3>
-                    <hr>
-                    <a href="addStore.php"><button type="button" class="btn btn-default btn-primary">
-                        Add new Store</button></a>
-                    <table class="table table-striped table-hover">
-                        <thead>
-                        <tr>
-                            <th>
-                                Store name
-                            </th>
-                            <th>
-                                Manager ID
-                            </th>
-                            <th>
-                                Clerk salary
-                            </th>
-                            <th>
-                                Manager salary
-                            </th>
-                            <th>
-                                Edit
-                            </th>
-
-                        </tr>
-                        </thead>
-                        <tbody>
-                            <?php include_once("Store_select.php"); ?>
-                        </tbody>
-                    </table>
+                    <!--<div class="alert alert-success alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <h4>
+                            OLAP!!
+                        </h4> 
+                    </div>
+                    <div class="jumbotron">
+                        <h1>
+                            Welcome OLAP!
+                        </h1>
+                        
+                        <p>
+                            <a class="btn btn-primary btn-large" href="contactUs.php">Contact Us</a>
+                        </p>
+                    </div>-->
+                    <div id="chartContainer" style="height: 400px; width: 100%;"></div>
                 </div>
                 <div class="col-md-1 column">
                 </div>

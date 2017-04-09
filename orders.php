@@ -1,4 +1,4 @@
-<? 
+<?php 
     session_start();
     if ($_SESSION['id']==null){
         echo "<script>alert('Please login First');location.href = 'login.php';</script>";
@@ -70,7 +70,7 @@
                     <th>Status</th>
                 </tr>
                 
-                <? include_once("Orders_select.php"); ?>
+                <?php include_once("Orders_select.php"); ?>
                 
             </table>
         </div>

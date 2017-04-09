@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
                    // echo $_SESSION['mStoreid'];
                    // echo $_SESSION['job'];

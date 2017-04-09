@@ -13,35 +13,8 @@
 
             $link = $_SERVER['REQUEST_URI'];
 
-            //echo $link;
-
-            //echo $gender."<BR>".$kind."<BR>".$search."<BR>";
-            /*
-
-            if ($search_YN != null) {
-                echo "1";
-            }elseif ($kind == null) {
-                echo "2";
-            }else{
-                echo "3";
-            }
-            */
-            //echo $gender."<BR>".$kind;
-
-            $servername = "localhost";
-            $username = "root";
-            $password = "root";
-            $dbname = "final";
-
-            // Create connection
-            $conn = new mysqli($servername, $username, $password, $dbname);
-            // Check connection
-            if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
-            } 
-            //echo "<p><font color=\"red\">Connected successfully</font></p>";
-
-            //$search = $_POST["search"];  // from testproduct.php
+            // connect to MySQL
+            include_once("config.php");
             
             // Run a sql
             
@@ -88,13 +61,13 @@
                 for ($k=0; $k < ($out_num-1); $k++) { 
                     echo "<div class="."content-top1".">";
                     
-                    echo "<div class="."col-md-4 col-md3"."><div class="."col-md1 simpleCart_shelfItem"."> <a href="."Item.php?pid=".$pid[($k*3)+1]."><img class="."img-responsive"." src=".$pim[($k*3)+1]." alt="."product image"."/></a><h3><a href="."Item.php?pid=".$pid[($k*3)+1].">".$pna[($k*3)+1]."</a></h3><div class="."price"."><h5 class="."item_price".">$".$ppr[($k*3)+1]."</h5><a href="."AA1.php?id=".$sid."&type=".$stype."&pid=".$pid[($k*3)+1].""." class="."item_add".">Add To Cart</a><div class="."clearfix".">  ";
+                    echo "<div class="."col-md-4 col-md3"."><div class="."col-md1 simpleCart_shelfItem"."> <a href="."Item.php?pid=".$pid[($k*3)+1]."><img class="."img-responsive"." src=".$pim[($k*3)+1]." alt="."product image"."/></a><h3><a href="."Item.php?pid=".$pid[($k*3)+1].">".$pna[($k*3)+1]."</a></h3><div class="."price"."><h5 class="."item_price".">$".$ppr[($k*3)+1]."</h5><a href="."AddtoCart.php?id=".$sid."&type=".$stype."&pid=".$pid[($k*3)+1].""." class="."item_add".">Add To Cart</a><div class="."clearfix".">  ";
                     echo "</div></div></div></div> ";
 
-                    echo "<div class="."col-md-4 col-md3"."><div class="."col-md1 simpleCart_shelfItem"."> <a href="."Item.php?pid=".$pid[($k*3)+2]."><img class="."img-responsive"." src=".$pim[($k*3)+2]." alt="."product image"."/></a><h3><a href="."Item.php?pid=".$pid[($k*3)+2].">".$pna[($k*3)+2]."</a></h3><div class="."price"."><h5 class="."item_price".">$".$ppr[($k*3)+2]."</h5><a href="."AA1.php?id=".$sid."&type=".$stype."&pid=".$pid[($k*3)+2].""." class="."item_add".">Add To Cart</a><div class="."clearfix".">  ";
+                    echo "<div class="."col-md-4 col-md3"."><div class="."col-md1 simpleCart_shelfItem"."> <a href="."Item.php?pid=".$pid[($k*3)+2]."><img class="."img-responsive"." src=".$pim[($k*3)+2]." alt="."product image"."/></a><h3><a href="."Item.php?pid=".$pid[($k*3)+2].">".$pna[($k*3)+2]."</a></h3><div class="."price"."><h5 class="."item_price".">$".$ppr[($k*3)+2]."</h5><a href="."AddtoCart.php?id=".$sid."&type=".$stype."&pid=".$pid[($k*3)+2].""." class="."item_add".">Add To Cart</a><div class="."clearfix".">  ";
                     echo "</div></div></div></div> ";
 
-                    echo "<div class="."col-md-4 col-md3"."><div class="."col-md1 simpleCart_shelfItem"."> <a href="."Item.php?pid=".$pid[($k*3)+3]."><img class="."img-responsive"." src=".$pim[($k*3)+3]." alt="."product image"."/></a><h3><a href="."Item.php?pid=".$pid[($k*3)+3].">".$pna[($k*3)+3]."</a></h3><div class="."price"."><h5 class="."item_price".">$".$ppr[($k*3)+3]."</h5><a href="."AA1.php?id=".$sid."&type=".$stype."&pid=".$pid[($k*3)+3].""." class="."item_add".">Add To Cart</a><div class="."clearfix".">  ";
+                    echo "<div class="."col-md-4 col-md3"."><div class="."col-md1 simpleCart_shelfItem"."> <a href="."Item.php?pid=".$pid[($k*3)+3]."><img class="."img-responsive"." src=".$pim[($k*3)+3]." alt="."product image"."/></a><h3><a href="."Item.php?pid=".$pid[($k*3)+3].">".$pna[($k*3)+3]."</a></h3><div class="."price"."><h5 class="."item_price".">$".$ppr[($k*3)+3]."</h5><a href="."AddtoCart.php?id=".$sid."&type=".$stype."&pid=".$pid[($k*3)+3].""." class="."item_add".">Add To Cart</a><div class="."clearfix".">  ";
                     echo "</div></div></div></div> ";
                     
                     echo "</div>";
@@ -109,7 +82,7 @@
                 echo "<div class="."content-top1".">";
 
                 for ($l=0; $l < $in_num; $l++) { 
-                    echo "<div class="."col-md-4 col-md3"."><div class="."col-md1 simpleCart_shelfItem"."> <a href="."Item.php?pid=".$pid[($i-$in_num+$l+1)].""."><img class="."img-responsive"." src=".$pim[($i-$in_num+$l+1)]." alt="."product image"."/></a><h3><a href="."Item.php?pid=".$pid[($i-$in_num+$l+1)].">".$pna[($i-$in_num+$l+1)]."</a></h3><div class="."price"."><h5 class="."item_price".">$".$ppr[($i-$in_num+$l+1)]."</h5><a href="."AA1.php?pid=".$pid[($i-$in_num+$l+1)].""." class="."item_add".">Add To Cart</a><div class="."clearfix".">  ";
+                    echo "<div class="."col-md-4 col-md3"."><div class="."col-md1 simpleCart_shelfItem"."> <a href="."Item.php?pid=".$pid[($i-$in_num+$l+1)].""."><img class="."img-responsive"." src=".$pim[($i-$in_num+$l+1)]." alt="."product image"."/></a><h3><a href="."Item.php?pid=".$pid[($i-$in_num+$l+1)].">".$pna[($i-$in_num+$l+1)]."</a></h3><div class="."price"."><h5 class="."item_price".">$".$ppr[($i-$in_num+$l+1)]."</h5><a href="."AddtoCart.php?pid=".$pid[($i-$in_num+$l+1)].""." class="."item_add".">Add To Cart</a><div class="."clearfix".">  ";
                         echo "</div></div></div></div> ";
                 }
 

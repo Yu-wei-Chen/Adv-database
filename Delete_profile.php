@@ -1,4 +1,4 @@
-<?
+<?php
     session_start();
 
     //echo $_SESSION['id']."<BR>";
@@ -11,17 +11,8 @@
 			$cid = $_SESSION['id'];
 
 
-			$servername = "localhost";
-			$username = "root";
-			$password = "root";
-			$dbname = "final";
-
-			// Create connection
-			$conn = new mysqli($servername, $username, $password, $dbname);
-			// Check connection
-			if ($conn->connect_error) {
-			    die("Connection failed: " . $conn->connect_error);
-			} 
+			// connect to MySQL
+            include_once("config.php");
 
             
 			if ($_SESSION['type'] == "Customer"){

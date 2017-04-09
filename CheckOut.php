@@ -1,4 +1,4 @@
-<? 
+<?php 
     session_start();
     if ($_SESSION['id']==null){
         echo "<script>alert('Please login First');location.href = 'login.php';</script>";
@@ -62,13 +62,13 @@
                     <th>Purchase Date</th>
                 </tr>
                 
-                <? include_once("Cart_select.php"); ?>
+                <?php include_once("Cart_select.php"); ?>
                 
             </table>
-            <input type="hidden" name="tid_buy" value="<? echo $tid_buy; ?>">
+            <input type="hidden" name="tid_buy" value="<?php echo $tid_buy; ?>">
             <!--<a href="#" class=" to-buy">PROCEED TO BUY</a>-->
             <input class="btn btn-danger btn-sm" data-toggle="modal" type="submit" value="PROCEED TO BUY">
-             <!-- <button class="btn btn-danger btn-sm" data-toggle="modal" onclick="location.href='<? echo "buy.php?id=".$tid_buy; ?>';">PROCEED TO BUY</button>-->
+             <!-- <button class="btn btn-danger btn-sm" data-toggle="modal" onclick="location.href='<?php echo "buy.php?id=".$tid_buy; ?>';">PROCEED TO BUY</button>-->
             </form>
             <div class="clearfix"></div>
         </div>

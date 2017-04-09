@@ -4,17 +4,8 @@
 			$cid = $_SESSION['id'];
 			//echo $cid;
 
-			$servername = "localhost";
-			$username = "root";
-			$password = "root";
-			$dbname = "final";
-
-			// Create connection
-			$conn = new mysqli($servername, $username, $password, $dbname);
-			// Check connection
-			if ($conn->connect_error) {
-			    die("Connection failed: " . $conn->connect_error);
-			} 
+			// connect to MySQL
+            include_once("config.php");
 
 			$name = $_POST["name"];
             $address = $_POST["address"];

@@ -9,18 +9,8 @@
 
             $tid = $_GET['tid'];
 
-			$servername = "localhost";
-			$username = "root";
-			$password = "root";
-			$dbname = "final";
-
-			// Create connection
-			$conn = new mysqli($servername, $username, $password, $dbname);
-			// Check connection
-			if ($conn->connect_error) {
-			    die("Connection failed: " . $conn->connect_error);
-			} 
-			//DELETE FROM `Login_Customer`  ID_Customer = 12
+			// connect to MySQL
+            include_once("config.php");
 
 
 			echo "delete";

@@ -1,11 +1,11 @@
-<?
+<?php
 session_start();
                    // echo $_SESSION['mStoreid'];
                    // echo $_SESSION['job'];
                    // echo $_SESSION['mstate'];
                    // echo $_SESSION['Mid'];
 ?>
-<? include_once("Faculty_edit.php"); ?>
+<?php include_once("Faculty_edit.php"); ?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -66,50 +66,50 @@ session_start();
                         <div class="form-group">
                             <label class="col-sm-2 control-label" >Name</label>
                             <div class="col-sm-6">
-                                <input class="form-control"  name="F_name" value="<? echo $manager_name ;?>" />
+                                <input class="form-control"  name="F_name" value="<?php echo $manager_name ;?>" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">State</label>
                             <div class="col-sm-2">
-                                <input class="form-control" name="F_state" value="<? echo $state ;?>" />
+                                <input class="form-control" name="F_state" value="<?php echo $state ;?>" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Email</label>
                             <div class="col-sm-6">
-                                <input class="form-control"  name="F_email" value="<? echo $email ;?>" />
+                                <input class="form-control"  name="F_email" value="<?php echo $email ;?>" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Phone</label>
                             <div class="col-sm-6">
-                                <input class="form-control" name="F_phone" value="<? echo $phone ;?>" />
+                                <input class="form-control" name="F_phone" value="<?php echo $phone ;?>" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Address</label>
                             <div class="col-sm-6">
-                                <input class="form-control" name="F_address" value="<? echo $address ;?>" />
+                                <input class="form-control" name="F_address" value="<?php echo $address ;?>" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Username</label>
                             <div class="col-sm-6">
-                                <input class="form-control" name="F_username" value="<? echo $username ;?>" />
+                                <input class="form-control" name="F_username" value="<?php echo $username ;?>" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Password</label>
                             <div class="col-sm-6">
-                                <input class="form-control" name="F_password" value="<? echo $password ;?>" />
-                                <input type="hidden"  name="Cid" value="<? echo $Cid ;?>" />
+                                <input class="form-control" name="F_password" value="<?php echo $password ;?>" />
+                                <input type="hidden"  name="Cid" value="<?php echo $Cid ;?>" />
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
                                 <input type="submit" class="btn btn-default btn-primary" value="Submit" />
-                                <a href="Faculty_delete.php?Cid=<? echo $Cid ?>"><button type="button" class="btn btn-default btn-danger">Delete this faculty</button></a>
+                                <a href="Faculty_delete.php?Cid=<?php echo $Cid ?>"><button type="button" class="btn btn-default btn-danger">Delete this faculty</button></a>
                             </div>
                         </div>
                     </form>

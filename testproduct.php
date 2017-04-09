@@ -15,7 +15,7 @@
                 <div class="col-md-5 grid">
                     <div class="flexslider">
                         <div class="item_display">
-        <? include_once("Item_select.php"); ?>
+        <?php include_once("Item_select.php"); ?>
     <div class="available">
                             <!--size(optional) or other available option-->
                             <h6>Choose quantity </h6>

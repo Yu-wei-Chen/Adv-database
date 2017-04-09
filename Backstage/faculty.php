@@ -39,6 +39,7 @@ session_start();
                                     <li><a href="order.php">Order</a></li>
                                     <li class="active"><a href="faculty.php">Faculty</a></li>
                                     <li><a href="store.php">Store</a></li>
+                                    <li><a href="olap.php">OLAP</a></li>
                                 </ul>
                                 <ul class="nav navbar-nav navbar-right">
                                     <li><a href="logout.php">Log Out</a></li>
@@ -93,7 +94,7 @@ session_start();
                         </tr>
                         </thead>
                         <tbody>
-                            <? include_once("Faculty_select.php"); ?>
+                            <?php include_once("Faculty_select.php"); ?>
                         </tbody>
                     </table>
                 </div>

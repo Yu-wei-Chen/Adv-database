@@ -49,8 +49,8 @@
                     <div class="flexslider">
                         <div class="item_display">
                             <!--Product image-->
-                            <form action="AA1.php" method="post">
-                            <? include_once("Item_select.php"); ?>
+                            <form action="AddtoCart.php" method="post">
+                            <?php include_once("Item_select.php"); ?>
                             </form>
                         <!--<div class="available">
                             <h6>Choose quantity </h6>

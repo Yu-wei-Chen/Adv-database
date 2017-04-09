@@ -40,6 +40,7 @@ session_start();
                                     <li><a href="order.php">Order</a></li>
                                     <li><a href="faculty.php">Faculty</a></li>
                                     <li><a href="store.php">Store</a></li>
+                                    <li><a href="olap.php">OLAP</a></li>
                                 </ul>
                                 <ul class="nav navbar-nav navbar-right">
                                     <li><a href="logout.php">Log Out</a></li>

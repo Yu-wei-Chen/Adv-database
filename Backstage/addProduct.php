@@ -77,7 +77,7 @@
                             <label class="col-sm-2 control-label">Store</label>
                             <div class="col-sm-6">
                                 <select class="form-control" name="store" value="" >
-                                    <? include_once("addProduct_storeid.php"); ?>
+                                    <?php include_once("addProduct_storeid.php"); ?>
                                 </select>
                             </div>
                         </div>

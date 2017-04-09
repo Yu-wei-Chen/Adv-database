@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 24, 2017 at 03:54 AM
+-- Generation Time: Mar 31, 2017 at 01:31 AM
 -- Server version: 5.6.33
 -- PHP Version: 7.0.12
 
@@ -339,20 +339,21 @@ INSERT INTO `Salary` (`job_title`, `ID_Store`, `salary`) VALUES
 CREATE TABLE `Store` (
   `ID_Store` int(11) NOT NULL,
   `store_name` varchar(40) DEFAULT NULL,
-  `ID_Manager` int(11) DEFAULT NULL
+  `ID_Manager` int(11) DEFAULT NULL,
+  `ID_Region` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `Store`
 --
 
-INSERT INTO `Store` (`ID_Store`, `store_name`, `ID_Manager`) VALUES
-(1, 'Nike', 3),
-(2, 'Adidas', 4),
-(3, 'GGG1', 6),
-(4, 'apple', 7),
-(5, 'ASUS', 9),
-(6, 'Acer1', 11);
+INSERT INTO `Store` (`ID_Store`, `store_name`, `ID_Manager`, `ID_Region`) VALUES
+(1, 'Nike', 3, 1),
+(2, 'Adidas', 4, 1),
+(3, 'GGG1', 6, 1),
+(4, 'apple', 7, 2),
+(5, 'ASUS', 9, 2),
+(6, 'Acer1', 11, 2);
 
 -- --------------------------------------------------------
 
@@ -380,9 +381,9 @@ CREATE TABLE `Transaction` (
 
 INSERT INTO `Transaction` (`ID_Transaction`, `purchase_date`, `quantity`, `price`, `ID_Product`, `ID_Store`, `ID_Customer`, `ID_Company`, `change_state`, `change_address`, `status`) VALUES
 (1, '2016-11-01', 1, 100, 1, 1, 1, NULL, 'PA', 'asdasd', 'success'),
-(2, '2016-11-10', 2, 33, 2, 2, NULL, 1, 'PA', '123123', 'uncheck'),
+(2, '2016-11-10', 2, 33, 2, 2, NULL, 1, 'PA', '123123', 'reject'),
 (3, '2016-11-12', 2, 33, 2, 2, NULL, 1, 'PA', '1231223', 'uncheck'),
-(4, '2016-11-15', 2, 100, 1, 1, NULL, 1, 'PA', '123123', 'uncheck'),
+(4, '2016-11-15', 2, 100, 1, 1, NULL, 1, 'PA', '123123', 'success'),
 (10, '2016-12-13', 2, 23, 3, 1, NULL, 1, 'PA', '123321 street', 'success'),
 (11, '2016-12-12', 2, 23, 3, 1, NULL, 1, 'PA', '123321 street', 'success'),
 (12, '2016-12-11', 2, 23, 3, 1, NULL, 1, 'PA', '123321 street', 'reject'),
@@ -404,8 +405,8 @@ INSERT INTO `Transaction` (`ID_Transaction`, `purchase_date`, `quantity`, `price
 (33, '2016-12-05', 1, 34, 19, 2, 1, NULL, 'NY', '5th', 'uncheck'),
 (41, '2016-12-09', 10, 55, 21, 2, 1, NULL, 'NY', '123123', 'uncheck'),
 (42, '2016-12-09', 1, 66, 23, 2, 1, NULL, 'NY', '5th', 'cart'),
-(43, '2017-03-15', 10, 100, 1, 1, 1, NULL, 'NY', '5th', 'cart'),
-(44, '2017-03-15', 1, 189, 30, 2, 1, NULL, 'NY', '5th', 'cart');
+(44, '2017-03-15', 1, 189, 30, 2, 1, NULL, 'NY', '5th', 'cart'),
+(46, '2017-03-30', 1, 188, 26, 2, 1, NULL, 'NY', '5th', 'cart');
 
 --
 -- Indexes for dumped tables
@@ -537,7 +538,7 @@ ALTER TABLE `Store`
 -- AUTO_INCREMENT for table `Transaction`
 --
 ALTER TABLE `Transaction`
-  MODIFY `ID_Transaction` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `ID_Transaction` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 --
 -- Constraints for dumped tables
 --

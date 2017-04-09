@@ -71,7 +71,7 @@ session_start();
                             <div class="col-sm-6">
                                 <select class="form-control"  name="F_store" >
                                     <option>Choose Store</option>
-                                    <? include_once("addFaculty_storeid.php"); ?>
+                                    <?php include_once("addFaculty_storeid.php"); ?>
                                 </select>
                             </div>
                         </div>

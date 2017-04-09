@@ -1,4 +1,4 @@
-<? 
+<?php 
     session_start();
     //$AAA =  $_SESSION['id'];
     //echo $AAA."<br/>";
@@ -53,7 +53,7 @@
         <div class="container">
             <h1>Products</h1>
             <div class="col-md-9">
-                <? include_once("testproductselect.php"); ?>
+                <?php include_once("testproductselect.php"); ?>
             </div>
             <div class="col-md-3 product-bottom">
                 <div class="rsidebar span_1_of_left">
@@ -77,8 +77,8 @@
                         </li>
                         <li class="item2"><a href="#">Sort by price</a>
                             <ul class="cute">
-                                <li class="subitem1"><a href="<? echo $link."&price=price"; ?>">Sort by $ -> $$$</a></li>
-                                <li class="subitem2"><a href="<? echo $link."&price=-price"; ?>">Sort by $$$ -> $</a></li>
+                                <li class="subitem1"><a href="<?php echo $link."&price=price"; ?>">Sort by $ -> $$$</a></li>
+                                <li class="subitem2"><a href="<?php echo $link."&price=-price"; ?>">Sort by $$$ -> $</a></li>
                             </ul>
                         </li>
                     </ul>

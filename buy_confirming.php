@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 
 $sid = $_SESSION['id'];
@@ -17,19 +17,8 @@ $tid = explode("/",$str);
 
 
 
-            $servername = "localhost";
-            $username = "root";
-            $password = "root";
-            $dbname = "final";
-
-            // Create connection
-            $conn = new mysqli($servername, $username, $password, $dbname);
-            // Check connection
-            if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
-            } 
-            //echo "<p><font color=\"red\">Connected successfully</font></p>";
-
+            // connect to MySQL
+            include_once("config.php");
 
             if ($stype == "Customer" ) {
             	$sql3 = "SELECT * FROM Customer where ID_Customer = $sid ";
@@ -90,7 +79,7 @@ $tid = explode("/",$str);
 
 		            }
  				
-	            	$total_price = $total_price+$price; 
+	            	$total_price = $total_price+($price*$total_qty[$z]); 
  				}	 
 
            

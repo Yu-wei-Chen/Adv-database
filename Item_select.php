@@ -5,21 +5,8 @@
             $product_id = $_GET['pid'];
             //echo $product_id;
 
-
-            $servername = "localhost";
-            $username = "root";
-            $password = "root";
-            $dbname = "final";
-
-            // Create connection
-            $conn = new mysqli($servername, $username, $password, $dbname);
-            // Check connection
-            if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
-            } 
-            //echo "<p><font color=\"red\">Connected successfully</font></p>";
-
-            //$search = $_POST["search"];
+        // connect to MySQL
+            include_once("config.php");
             
             // Run a sql
             $sql = "SELECT * FROM Product where ID_Product = '$product_id'"; // find the top 5 popular item  (where kind like '$search'

@@ -33,6 +33,7 @@
                                     <li class="active"><a href="order.php">Order</a></li>
                                     <li><a href="faculty.php">Faculty</a></li>
                                     <li><a href="store.php">Store</a></li>
+                                    <li><a href="olap.php">OLAP</a></li>
                                 </ul>
                                 <ul class="nav navbar-nav navbar-right">
                                     <li><a href="logout.php">Log Out</a></li>
@@ -89,7 +90,7 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                        <? include_once("Order_select_A.php"); ?>
+                                        <?php include_once("Order_select_A.php"); ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -115,7 +116,7 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                        <? include_once("Order_select_R.php"); ?>
+                                        <?php include_once("Order_select_R.php"); ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -144,7 +145,7 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                        <? include_once("Order_select_U.php"); ?>
+                                        <?php include_once("Order_select_U.php"); ?>
                                     </tbody>
                                 </table>
                             </div>

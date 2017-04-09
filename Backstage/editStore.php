@@ -1,11 +1,11 @@
-<?
+<?php
 session_start();
                    // echo $_SESSION['mStoreid'];
                    // echo $_SESSION['job'];
                    // echo $_SESSION['mstate'];
                    // echo $_SESSION['Mid'];
 ?>
-<? include_once("Store_edit.php"); ?>
+<?php include_once("Store_edit.php"); ?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -66,68 +66,68 @@ session_start();
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Name</label>
                             <div class="col-sm-6">
-                                <input class="form-control" name="Store_name" value="<? echo $Sname  ;?>" />
+                                <input class="form-control" name="Store_name" value="<?php echo $Sname  ;?>" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Job Title : Clerk</label>
                             <div class="col-sm-6">
-                                <input class="form-control" name="Salary_C" value="<? echo $salary_C  ;?>" />
+                                <input class="form-control" name="Salary_C" value="<?php echo $salary_C  ;?>" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Job Title : Manager</label>
                             <div class="col-sm-6">
-                                <input class="form-control" name="Salary_M" value="<? echo $salary_M  ;?>" />
+                                <input class="form-control" name="Salary_M" value="<?php echo $salary_M  ;?>" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Manager name</label>
                             <div class="col-sm-6">
-                                <input class="form-control" name="Manager_name" value="<? echo $Manager_name  ;?>" />
+                                <input class="form-control" name="Manager_name" value="<?php echo $Manager_name  ;?>" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Manager address</label>
                             <div class="col-sm-6">
-                                <input class="form-control" name="Manager_address" value="<? echo $Manager_address  ;?>" />
+                                <input class="form-control" name="Manager_address" value="<?php echo $Manager_address  ;?>" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Manager email</label>
                             <div class="col-sm-6">
-                                <input class="form-control" name="Manager_email" value="<? echo $Manager_email  ;?>" />
+                                <input class="form-control" name="Manager_email" value="<?php echo $Manager_email  ;?>" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Manager phone</label>
                             <div class="col-sm-6">
-                                <input class="form-control" name="Manager_phone" value="<? echo $Manager_phone  ;?>" />
+                                <input class="form-control" name="Manager_phone" value="<?php echo $Manager_phone  ;?>" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Manager State</label>
                             <div class="col-sm-6">
-                                <input class="form-control" name="Manager_state" value="<? echo $Manager_state  ;?>" />
+                                <input class="form-control" name="Manager_state" value="<?php echo $Manager_state  ;?>" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Manager username</label>
                             <div class="col-sm-6">
-                                <input class="form-control" name="Manager_username" value="<? echo $Manager_username  ;?>" />
+                                <input class="form-control" name="Manager_username" value="<?php echo $Manager_username  ;?>" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Manager password</label>
                             <div class="col-sm-6">
-                                <input class="form-control" name="Manager_password" value="<? echo $Manager_password  ;?>" />
-                                <input type="hidden" class="form-control" name="Sid" value="<? echo $Sid  ;?>" />
+                                <input class="form-control" name="Manager_password" value="<?php echo $Manager_password  ;?>" />
+                                <input type="hidden" class="form-control" name="Sid" value="<?php echo $Sid  ;?>" />
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
                                 <input type="submit" class="btn btn-default btn-primary" value="Submit" />
-                                <a href="Store_delete.php?Sid=<? echo $Sid ?>"><button type="button" class="btn btn-default btn-danger">Delete this store</button></a>
+                                <a href="Store_delete.php?Sid=<?php echo $Sid ?>"><button type="button" class="btn btn-default btn-danger">Delete this store</button></a>
                             </div>
                         </div>
                     </form>

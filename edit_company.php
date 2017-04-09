@@ -1,4 +1,4 @@
-<? 
+<?php 
     session_start();
     //echo "session id ====".$_SESSION['id']."<BR>";
     //echo $_SESSION['type'];
@@ -15,17 +15,11 @@
 </head>
 <?php
             
-            $servername = "localhost";
-            $username = "root";
-            $password = "root";
-            $dbname = "final";
+            // connect to MySQL
+            include_once("config.php");
 
-            // Create connection
-            $conn = new mysqli($servername, $username, $password, $dbname);
-            // Check connection
-            if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
-            } 
+
+            
             //echo "<p><font color=\"red\">Connected successfully</font></p>";
             $sid = $_SESSION['id'];
             // Run a sql
@@ -99,19 +93,19 @@
 
                     <div class="mation">
                         <span>Name</span>
-                        <input type="text" name="name" value=<? echo $cname; ?>>
+                        <input type="text" name="name" value=<?php echo $cname; ?>>
                         <span>Address</span>
-                        <input type="text" name="address" value=<? echo $caddress; ?>>
+                        <input type="text" name="address" value=<?php echo $caddress; ?>>
                         <span>State</span>
-                        <input type="text" name="state" value=<? echo $cstate; ?>>
+                        <input type="text" name="state" value=<?php echo $cstate; ?>>
                         <span>Income</span>
-                        <input type="text" name="income" value=<? echo $cincome; ?>>
+                        <input type="text" name="income" value=<?php echo $cincome; ?>>
                         <span>Category</span>
-                        <input type="text" name="category" value=<? echo $ccategory; ?>>
+                        <input type="text" name="category" value=<?php echo $ccategory; ?>>
                         <span>Phone</span>
-                        <input type="text" name="phone" value=<? echo $cphone; ?>>
+                        <input type="text" name="phone" value=<?php echo $cphone; ?>>
                         <span>Email Address</span>
-                        <input type="text" name="email" value=<? echo $cemail; ?>>
+                        <input type="text" name="email" value=<?php echo $cemail; ?>>
                     </div>
                     <div class="clearfix"> </div>
                 </div>
@@ -119,9 +113,9 @@
 
                     <div class="mation">
                         <span>User Name</span>
-                        <input type="text" name="username" value=<? echo $username; ?>>
+                        <input type="text" name="username" value=<?php echo $username; ?>>
                         <span>Password</span>
-                        <input type="text" name="password" value=<? echo $pwd; ?>>
+                        <input type="text" name="password" value=<?php echo $pwd; ?>>
                     </div>
                 </div>
                 <div class="register-but">

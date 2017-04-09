@@ -10,7 +10,7 @@
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
 </head>
-<? include_once("buy_confirming.php"); ?>
+<?php include_once("buy_confirming.php"); ?>
 <body>
 <div class="main">
     <div class="header">
@@ -58,20 +58,20 @@
                                     <div class="form-group">
                                         <label for="name" class="col-sm-2 control-label">Name</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" name="name" value="<? echo $cname; ?>" />
+                                            <input type="text" class="form-control" name="name" value="<?php echo $cname; ?>" />
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="state" class="col-sm-2 control-label">State</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" name="state" value="<? echo $cstate; ?>" />
+                                            <input type="text" class="form-control" name="state" value="<?php echo $cstate; ?>" />
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="address" class="col-sm-2 control-label">Address</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" name="address" value="<? echo $caddress; ?>" />
-                                            <input type="hidden" value="<? echo $str; ?>" name="tid">
+                                            <input type="text" class="form-control" name="address" value="<?php echo $caddress; ?>" />
+                                            <input type="hidden" value="<?php echo $str; ?>" name="tid">
                                         </div>
                                     </div>
                                 
@@ -81,7 +81,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong>Total Price :</strong> <? echo $total_price; ?> <hr>
+                            <strong>Total Price :</strong> <?php echo $total_price; ?> <hr>
                         </td>
                     </tr>
 

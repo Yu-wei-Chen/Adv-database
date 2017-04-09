@@ -1,4 +1,4 @@
-<? 
+<?php
     session_start();
     //echo "session id ====".$_SESSION['id']."<BR>";
     //echo $_SESSION['type'];
@@ -17,19 +17,8 @@
 <body>
 <div class="main">
 <?php
-            
-            $servername = "localhost";
-            $username = "root";
-            $password = "root";
-            $dbname = "final";
-
-            // Create connection
-            $conn = new mysqli($servername, $username, $password, $dbname);
-            // Check connection
-            if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
-            } 
-            //echo "<p><font color=\"red\">Connected successfully</font></p>";
+            // connect to MySQL
+            include_once("config.php");
 
 
             // Run a sql
@@ -104,27 +93,27 @@
         <div id="head_hot_goods_content">
             <ul>
                 <li>
-                    <a href="Item.php?pid=<? echo $top5_id[0]; ?>"><? echo $pic[0]; ?></a>
+                    <a href="Item.php?pid=<?php echo $top5_id[0]; ?>"><?php echo $pic[0]; ?></a>
                     <a></a>
                     <a></a>
                 </li>
                 <li>
-                    <a href="Item.php?pid=<? echo $top5_id[1]; ?>"><? echo $pic[1]; ?></a>
+                    <a href="Item.php?pid=<?php echo $top5_id[1]; ?>"><?php echo $pic[1]; ?></a>
                     <a></a>
                     <a></a>
                 </li>
                 <li>
-                    <a href="Item.php?pid=<? echo $top5_id[2]; ?>"><? echo $pic[2]; ?></a>
+                    <a href="Item.php?pid=<?php echo $top5_id[2]; ?>"><?php echo $pic[2]; ?></a>
                     <a></a>
                     <a></a>
                 </li>
                 <li>
-                    <a href="Item.php?pid=<? echo $top5_id[3]; ?>"><? echo $pic[3]; ?></a>
+                    <a href="Item.php?pid=<?php echo $top5_id[3]; ?>"><?php echo $pic[3]; ?></a>
                     <a></a>
                     <a></a>
                 </li>
                 <li>
-                    <a href="Item.php?pid=<? echo $top5_id[4]; ?>"><? echo $pic[4]; ?></a>
+                    <a href="Item.php?pid=<?php echo $top5_id[4]; ?>"><?php echo $pic[4]; ?></a>
                     <a></a>
                     <a></a>
                 </li>

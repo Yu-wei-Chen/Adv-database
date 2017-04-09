@@ -1,11 +1,11 @@
-<?
+<?php
 session_start();
                    // echo $_SESSION['mStoreid'];
                    // echo $_SESSION['job'];
                    // echo $_SESSION['mstate'];
                    // echo $_SESSION['Mid'];
 ?>
-<? include_once("Product_edit.php"); ?>
+<?php include_once("Product_edit.php"); ?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -66,32 +66,32 @@ session_start();
                         <div class="form-group">
                             <label class="col-sm-2 control-label"></label>
                             <div class="col-sm-6">
-                            <?  echo "<img src=".$image.">";  ?>
+                            <?php  echo "<img src=".$image.">";  ?>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Name</label>
                             <div class="col-sm-6">
-                                <input class="form-control"  name="name" value="<? echo $product_name ;?>" />
+                                <input class="form-control"  name="name" value="<?php echo $product_name ;?>" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Price</label>
                             <div class="col-sm-2">
-                                <input class="form-control"  name="price" value="<? echo $price ;?>" />
+                                <input class="form-control"  name="price" value="<?php echo $price ;?>" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Inventory</label>
                             <div class="col-sm-2">
-                                <input class="form-control"  name="inventory" value="<? echo $inventory ;?>" />
+                                <input class="form-control"  name="inventory" value="<?php echo $inventory ;?>" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Description</label>
                             <div class="col-sm-6">
-                                <textarea class="form-control" rows="5"  name="describe" value="" ><? echo $description ;?></textarea>
-                                <input type="hidden" name="Pid" value="<? echo $Pid ;?>" />
+                                <textarea class="form-control" rows="5"  name="describe" value="" ><?php echo $description ;?></textarea>
+                                <input type="hidden" name="Pid" value="<?php echo $Pid ;?>" />
                             </div>
                         </div>
                         <div class="form-group">
@@ -103,7 +103,7 @@ session_start();
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
                                 <input type="submit" class="btn btn-default btn-primary" value="Submit" />
-                                <a href="Product_delete.php?Pid=<? echo $Pid ?>"><button type="button" class="btn btn-default btn-danger">Delete this Product</button></a>
+                                <a href="Product_delete.php?Pid=<?php echo $Pid ?>"><button type="button" class="btn btn-default btn-danger">Delete this Product</button></a>
                             </div>
                         </div>
                     </form>
