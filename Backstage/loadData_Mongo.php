@@ -1,15 +1,27 @@
 <?php
 
 // connect to MySQL
-include_once("config.php");
+//include_once("config.php");
+
+            $servername = "localhost";
+            $username = "root";
+            $password = "root";
+            $dbname = "mongo0411";
+
+            // Create connection
+            $conn = new mysqli($servername, $username, $password, $dbname);
+            // Check connection
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            } 
 
 // ## Mongo ##
 // Create a Mongo conenction
 $mongoDB = new MongoClient("mongodb://localhost");
 
 // Choose the database and collection
-$db = $mongoDB->test1;
-$coll = $db->colltest1;
+$db = $mongoDB->test2;
+$coll = $db->colltest8;//4=0411
 
 
 // Select from Transaction with Store to get Fact table  // Unannotation Current time when maintain
@@ -39,62 +51,68 @@ while($row = $result->fetch_assoc()) {
     // prevent Null value of Customer ID
 	if ($ID_Customer_f[$i]<=0){
 		$ID_Customer_f[$i]=0;
-	}
-	// Select Customer table
-	$sql_customer = "SELECT ID_Customer, customer_name, state, age, gender, income FROM Customer WHERE ID_Customer =".$ID_Customer_f[$i];
-	$result_customer = $conn->query($sql_customer);
-	while($row_customer = $result_customer->fetch_assoc()) {
-		$ID_Customer = $row_customer["ID_Customer"];
-		$customer_name = $row_customer["customer_name"];
-		$state = $row_customer["state"];
-		$age = $row_customer["age"];
-		$gender = $row_customer["gender"];
-		$income = $row_customer["income"];
+		$CustomerDim = null;
+	}else{
+		// Select Customer table
+		$sql_customer = "SELECT ID_Customer, customer_name, state, age, gender, income FROM Customer WHERE ID_Customer =".$ID_Customer_f[$i];
+		$result_customer = $conn->query($sql_customer);
 
-		// Replace into Customer table
-		//echo "Customer-D<BR>".$ID_Customer." ".$customer_name." ".$state." ".$age." ".$gender." ".$income."<BR><BR>";
+		while($row_customer = $result_customer->fetch_assoc()) {
+			$ID_Customer = $row_customer["ID_Customer"];
+			$customer_name = $row_customer["customer_name"];
+			$state = $row_customer["state"];
+			$age = $row_customer["age"];
+			$gender = $row_customer["gender"];
+			$income = $row_customer["income"];
 
-		// Mongo - set Customer Dim
-		$CustomerDim = array( 
-        "customer_id" => $ID_Customer, 
-        "customer_name" => $customer_name, 
-        "region" => $state,
-        "age" => $age,
-        "gender" => $gender,
-        "income" => $income
-    	);
+			// Replace into Customer table
+			//echo "Customer-D<BR>".$ID_Customer." ".$customer_name." ".$state." ".$age." ".$gender." ".$income."<BR><BR>";
 
-	}
+
+			// Mongo - set Customer Dim
+			$CustomerDim = array( 
+	        "customer_id" => $ID_Customer, 
+	        "customer_name" => $customer_name, 
+	        "region" => $state,
+	        "age" => $age,
+	        "gender" => $gender,
+	        "income" => $income
+	    	);
+		}
+	}	
 
 
 	// ID_Company
     // prevent Null value of Company ID
 	if ($ID_Company_f[$i]<=0){
 		$ID_Company_f[$i]=0;
-	}
-	// Select Customer table
-	$sql_company = "SELECT ID_Company, company_name, state, category, income FROM Company WHERE ID_Company =".$ID_Company_f[$i];
-	$result_company = $conn->query($sql_company);
-	while($row_company = $result_company->fetch_assoc()) {
-		$ID_Company = $row_company["ID_Company"];
-		$company_name = $row_company["company_name"];
-		$state = $row_company["state"];
-		$category = $row_company["category"];
-		$income = $row_company["income"];
+		$CompanyDim = null;
+	}else{
 
-		// Replace into Customer table
-		//echo "Company-D<BR>".$ID_Company." ".$company_name." ".$state." ".$category." ".$income."<BR><BR>";
+		// Select Customer table
+		$sql_company = "SELECT ID_Company, company_name, state, category, income FROM Company WHERE ID_Company =".$ID_Company_f[$i];
+		$result_company = $conn->query($sql_company);
 
-		// Mongo - set Company Dim
-		$CompanyDim = array( 
-        "company_id" => $ID_Company, 
-        "company_name" => $company_name, 
-        "region" => $state,
-        "category" => $category,
-        "income" => $income
-    	);
-	}
+		while($row_company = $result_company->fetch_assoc()) {
+			$ID_Company = $row_company["ID_Company"];
+			$company_name = $row_company["company_name"];
+			$state = $row_company["state"];
+			$category = $row_company["category"];
+			$income = $row_company["income"];
 
+			// Replace into Customer table
+			//echo "Company-D<BR>".$ID_Company." ".$company_name." ".$state." ".$category." ".$income."<BR><BR>";
+
+			// Mongo - set Company Dim
+			$CompanyDim = array( 
+	        "company_id" => $ID_Company, 
+	        "company_name" => $company_name, 
+	        "region" => $state,
+	        "category" => $category,
+	        "income" => $income
+	    	);
+		}
+	}	
 
 	// ID_Product
 	// Select Product table
@@ -168,36 +186,39 @@ while($row = $result->fetch_assoc()) {
 		$quantity = $row_trans["quantity"];
 		$price = $row_trans["price"];
 
+		$sales = $price*$quantity;
 		// Replace into Transaction table
 		//echo "Transaction-D<BR>".$ID_Transaction." ".$quantity." ".$price."<BR><BR>";
 
 		// Mongo - set Transaction Dim
 		$TransactionDim = array( 
         "transaction_id" => $ID_Transaction, 
-        "quantity" => $quantity, 
-        "price" => $price
+        "quantity" => (int)$quantity, 
+        "price" => (int)$price,
+        "sales" => (int)$sales
     	);
 	}
 
 
 	// Mongo - set document array for Fact
 		$Fact = array( 
-        "year" => $year[$i], 
-        "month" => $month[$i], 
-        "day" => $day[$i],
-        "week" => $week[$i],
-        "customer_id" => $CustomerDim,
-        "company_id" => $CompanyDim,
-        "transaction_id" => $TransactionDim,
-        "store_id" => $StoreDim,
-        "region_id" => $RegionDim,
-        "product_id" => $ProductDim
+        "year" => (int)$year[$i], 
+        "month" => (int)$month[$i], 
+        "day" => (int)$day[$i],
+        "week" => (int)$week[$i],
+        "customer_dim" => $CustomerDim,
+        "company_dim" => $CompanyDim,
+        "transaction_dim" => $TransactionDim,
+        "store_dim" => $StoreDim,
+        "region_dim" => $RegionDim,
+        "product_dim" => $ProductDim
     	);
 
 
 	// Mongo - insert document
 	// Insert the document in to collection
-	$coll->insert($Fact);
+	//$coll->insert($Fact);
+	print_r($Fact);
     echo "数据插入成功<BR>";
 
 	// array index
